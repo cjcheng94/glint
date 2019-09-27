@@ -1,0 +1,50 @@
+{
+  "name": "node_git_glint",
+  "version": "1.0.0",
+  "description": "\"git init\" on crack, https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "CLI"
+  ],
+  "dependencies": {
+    "@octokit/rest": "^16.30.1",
+    "@types/minimist": "^1.2.0",
+    "@types/touch": "^3.1.1",
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^5.0.0",
+    "figlet": "^1.2.4",
+    "inquirer": "^7.0.0",
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.0",
+    "nodemon": "^1.19.2",
+    "simple-git": "^1.126.0",
+    "touch": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/clui": "^0.3.0",
+    "@types/configstore": "^4.0.0",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/node": "^12.7.7",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.3"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc",
+    "build:live": "nodemon --watch './**/*.ts' --exec 'ts-node' index.ts -I"
+  },
+  "bin": {
+    "glint": "./index.ts"
+  },
+  "preferGlobal": true,
+  "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+  "lint": "tslint -p tsconfig.json"
+}
